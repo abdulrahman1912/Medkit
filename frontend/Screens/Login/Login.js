@@ -36,6 +36,14 @@ const [checked, setChecked] = useState(false);
     flexDirection:"row",
     },
 
+    container3:{
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center",
+      flexDirection:"row",
+      
+      },
+
    
 
     imgcontainer: {
@@ -132,12 +140,14 @@ const [checked, setChecked] = useState(false);
             
             </View>
 
-            <View style={{marginVertical:10, display:"flex", flexDirection:"row", gap:2}}>
+            <View style={{...styles.container3, gap:-10, marginVertical:20 }}>
+            <View style={{ display:"flex", flexDirection:"row"}}>
             <Text>Don't have an Account?</Text>
+            </View>
             <Button mode="text" textColor="#91A0F6">
           Register Now
         </Button>
-            </View>
+      </View>
       </View>
      
     </Page>
