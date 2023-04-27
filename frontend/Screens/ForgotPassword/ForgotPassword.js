@@ -42,7 +42,7 @@ export const ForgotPassword = ({navigation}) => {
         activeUnderlineColor={"#91A0F6"}
         />
 
-        <ScreenBtn style={{marginVertical:275}}>Continue</ScreenBtn>
+        <ScreenBtn onPress={() => navigation.navigate('OtpVerification')} style={{marginVertical:275}}>Continue</ScreenBtn>
             </View>
 
         </Page>

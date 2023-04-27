@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
   },
   textStyle2: {
     fontSize: 18,
+    fontWeight: 700,
   },
 });
 
