@@ -7,6 +7,13 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
   },
+
+  container2: {
+    paddingTop: 20,
+    width: "100%",
+    alignItems: "center",
+  },
+
   btn: {
     height: 60,
     width: "95%",
@@ -14,11 +21,6 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
   },
-
-  textStyle: {
-    fontSize: 20,
-  },
-
   btn2: {
     borderColor: "#91A0F6",
     borderWidth: 1,
@@ -27,6 +29,15 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     display: "flex",
     justifyContent: "center",
+  },
+  btn3: {
+    height: 50,
+    width: "45%",
+    borderRadius: 10,
+    display: "flex",
+  },
+  textStyle: {
+    fontSize: 20,
   },
 });
 
@@ -72,6 +83,8 @@ export const CustomBtnLight = ({
     </View>
   );
 };
+
+
 
 CustomBtn.defaultProps = {
   width: "40%",
