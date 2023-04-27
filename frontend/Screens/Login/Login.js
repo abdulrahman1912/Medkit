@@ -144,7 +144,7 @@ const [checked, setChecked] = useState(false);
             <View style={{ display:"flex", flexDirection:"row"}}>
             <Text>Don't have an Account?</Text>
             </View>
-            <Button mode="text" textColor="#91A0F6">
+            <Button mode="text" textColor="#91A0F6" onPress={() => navigation.navigate('ForgotPassword')}>
           Register Now
         </Button>
       </View>

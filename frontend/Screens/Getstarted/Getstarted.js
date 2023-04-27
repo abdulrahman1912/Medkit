@@ -34,8 +34,8 @@ export const Getstarted = ({ navigation }) => {
             <Text style={styles.text}>Just A Click Away To Get Started</Text>
       
             <View style={styles.container}>
-            <CustomBtn>Register</CustomBtn>
-            <CustomBtnLight>Login</CustomBtnLight>
+            <CustomBtn >Register</CustomBtn>
+            <CustomBtnLight onPress={() => navigation.navigate('Login')}>Login</CustomBtnLight>
             
             </View>
         </Page>
