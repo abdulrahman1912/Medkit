@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Page} from "../../components";
+import { Page, CustomBtn, CustomBtnLight} from "../../components";
 import Vector from "../../assets/illustrations/vector1.svg";
 import Image from "../../assets/images/Medkit-logo.svg";
-import { CustomBtn, CustomBtnLight } from "../../components/Button/button";
+
 
 export const Getstarted = ({ navigation }) => {
     const styles = StyleSheet.create({
