@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
     },
 
     inputContainer: {
-        height: 48,
-            borderRadius: 13,
+        height: 55,
+            borderRadius: 25,
             paddingVertical: 12,
             paddingHorizontal: 16,
             border: 0,
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
 export const Input = ({labelName, 
     placeholder, 
     onChange, 
+    title,
     type, 
     secure, 
     isNumeric, 
@@ -61,6 +62,7 @@ return (
                     textContentType={type} //can take possible values of "emailAddress", "password", "newPassword", "oneTimeCode"
                     onChangeText={onChange}
                     style={styles.textInput}
+                    activeUnderlineColor={title}
                     placeholderTextColor={"#6F6F6F"}
                     selectionColor={"#E2E4EB"}
                     maxLength={maxLength}

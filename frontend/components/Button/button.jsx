@@ -36,8 +36,18 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     display: "flex",
   },
+  btn4: {
+    height: 60,
+    width: "100%",
+    borderRadius: 20,
+    display: "flex",
+    justifyContent: "center",
+  },
   textStyle: {
     fontSize: 20,
+  },
+  textStyle2: {
+    fontSize: 18,
   },
 });
 
@@ -84,6 +94,26 @@ export const CustomBtnLight = ({
   );
 };
 
+export const ScreenBtn = ({
+  style,
+  onPress,
+  children,
+  textColor,
+  ...props
+}) => {
+  return (
+    <Button
+      {...props}
+      labelStyle={styles.textStyle2}
+      onPress={onPress}
+      buttonColor={"#91A0F6"}
+      textColor={textColor || "#fff"}
+      style={{ ...styles.btn4, ...style }}
+    >
+      {children}
+    </Button>
+  );
+};
 
 
 CustomBtn.defaultProps = {

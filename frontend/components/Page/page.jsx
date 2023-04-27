@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet} from "react-native";
+import { Text, View, StyleSheet,Dimensions} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export const Page = (props) => {
@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
         alignItems:'center',
         display:'flex',
         flexDirection:'column',
-        
-        paddingTop:0,
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('screen').width,
         backgroundColor:'#91A0F6',
     },
 
