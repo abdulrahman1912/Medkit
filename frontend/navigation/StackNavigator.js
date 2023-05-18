@@ -7,6 +7,7 @@ import {
   Login,
   ForgotPassword, 
   OtpVerification,
+  ConfirmNewPassword,
 
 
 } from "../Screens";
@@ -42,6 +43,11 @@ export const StackNavigator = () => {
          <Stack.Screen
           name="OtpVerification"
           component={OtpVerification}
+          options={{headerShown:false}}
+        />
+        <Stack.Screen
+          name="ConfirmNewPassword"
+          component={ConfirmNewPassword}
           options={{headerShown:false}}
         />
       </Stack.Navigator>
