@@ -1,6 +1,6 @@
 import {React, useState} from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
-import {Checkbox, Button} from "react-native-paper";
+import {Button} from "react-native-paper";
 import { Page, Input} from "../../components";
 import Image from "../../assets/images/Medkit-logo.svg";
 import Google from "../../assets/icons/google.svg";
@@ -15,7 +15,7 @@ export const Register = ({ navigation }) => {
     type: ""
 })
 const [showPassword] = useState(false);
-const [checked, setChecked] = useState(false);
+
 
   const styles = StyleSheet.create({
     container: {
@@ -88,8 +88,8 @@ const [checked, setChecked] = useState(false);
 
   return (
     <Page>
-      {/* <Image style={styles.imgcontainer} width="100%" height="10%" /> */}
-    <Text style={{fontSize:50,fontWeight:700, color:"#fff", marginLeft:10}}>MEDKIT</Text>
+      
+    <Text style={{fontSize:50,fontWeight:700, color:"#fff", marginLeft:15}}>MEDKIT</Text>
       <View style={styles.container}>
         <Text style={{fontSize:25,}}>Register</Text>
         <Text style={{marginTop:10, color:"#615B5B"}}>Please fill in your details</Text>

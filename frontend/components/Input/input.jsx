@@ -39,8 +39,10 @@ export const Input = ({
   secure,
   password,
   style,
-  styelInput,
-
+  type,
+  styleIcon,
+  onChange,
+  value,
   onFocus = () => {},
   ...props
 }) => {
@@ -50,12 +52,20 @@ export const Input = ({
     <View style={[styles.inputView, style]}>
       <Text style={styles.label}>{labelName}</Text>
       <View style={[styles.inputContainer]}>
+      <MaterialCommunityIcons name={startIcon} style={{marginRight:8, fontSize:24}} />
         <TextInput
           secureTextEntry={secure}
           autoCorrect={false}
+          keyboardType={type}
+          onChangeText={onChange}
+          value={value}
           {...props}
         />
       </View>
     </View>
   );
 };
+
+Input.defaultProps = {
+  'isNumeric': false
+}

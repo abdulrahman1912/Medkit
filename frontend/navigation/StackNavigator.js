@@ -1,23 +1,24 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { 
-  Onboarding, 
+import {
+  Onboarding,
   Getstarted,
   Login,
-  ForgotPassword, 
+  ForgotPassword,
   OtpVerification,
   ConfirmNewPassword,
   Register,
-
-
+  Fillprofile,
 } from "../Screens";
+
+import { TabsNavigator } from './TabsNavigator';
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Register">
+      <Stack.Navigator initialRouteName="Tabs">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
@@ -39,22 +40,33 @@ export const StackNavigator = () => {
         <Stack.Screen
           name="ForgotPassword"
           component={ForgotPassword}
-          options={{headerShown:false}}
+          options={{ headerShown: false }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="OtpVerification"
           component={OtpVerification}
-          options={{headerShown:false}}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="ConfirmNewPassword"
           component={ConfirmNewPassword}
-          options={{headerShown:false}}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Register"
           component={Register}
-          options={{headerShown:false}}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Fillprofile"
+          component={Fillprofile}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Tabs"
+          component={TabsNavigator}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

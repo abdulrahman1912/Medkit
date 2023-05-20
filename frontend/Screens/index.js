@@ -6,3 +6,4 @@ export * from './OtpVerification/OtpVerification';
 export * from './ConfirmNewPassword/ConfirmNewPassword';
 export * from './Register/Register';
 export * from './Fillprofile/Fillprofile';
+export * from './Mainpages';
