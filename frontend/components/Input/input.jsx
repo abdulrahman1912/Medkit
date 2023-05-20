@@ -1,84 +1,61 @@
-import { TextInput, View, StyleSheet,Text } from "react-native";
-
+import { React, useState } from "react";
+import { View, StyleSheet, Text, TextInput } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 const styles = StyleSheet.create({
+  inputView: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+   marginVertical:5
+  },
 
-    inputHeader:{
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        marginVertical: 2.5
-    },
+  label: {
+    color: "#615B5B",
+    fontSize: 14,
+    marginVertical: 5,
+  },
 
-    inputContainer: {
-        height: 55,
-            borderRadius: 25,
-            paddingVertical: 12,
-            paddingHorizontal: 16,
-            border: 0,
-            marginTop: 3,
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "row",
-            justifyContent: "flex-start",
-            backgroundColor: "#E2E4EB"
-    },
-
-    textInput:{
-        width:"80%",
-        height:"100%",
-        color:"#000"
-    },
-    label: {
-        color: "#615B5B"
-    }
+  inputContainer: {
+    height: 55,
+    borderRadius: 25,
+    paddingHorizontal: 16,
+    borderWidth: 0.1,
+    marginTop: 3,
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    flexDirection: "row",
+    backgroundColor: "#E2E4EB",
+    color: "000000",
+  },
 });
 
-export const Input = ({labelName, 
-    placeholder, 
-    onChange, 
-    title,
-    type, 
-    secure, 
-    isNumeric, 
-    style,
-    styleInput,
-    left,
-    right,
-    maxLength,
-    ...rest
+export const Input = ({
+  labelName,
+  startIcon,
+  endIcon,
+  secure,
+  password,
+  style,
+  styelInput,
+
+  onFocus = () => {},
+  ...props
 }) => {
-return (
-    <View style={[styles.inputHeader, style]}>
-            <Text style={styles.label}>{labelName}</Text>
-            <View 
-                style={{...styles.inputContainer, ...styleInput }}
-            >
-                { left }
-                <TextInput
-                    placeholder={placeholder}
-                    secureTextEntry={secure}
-                    keyboardType={!isNumeric ? 'default' : 'numeric'}
-                    textContentType={type} //can take possible values of "emailAddress", "password", "newPassword", "oneTimeCode"
-                    onChangeText={onChange}
-                    style={styles.textInput}
-                    activeUnderlineColor={title}
-                    placeholderTextColor={"#6F6F6F"}
-                    selectionColor={"#E2E4EB"}
-                    maxLength={maxLength}
-                    borderColor={""}
-                    {...rest}
-                    editable={rest.disabled}
-                />
-                { right }
-            </View>
-        </View>
-    )
-    
-}
-
-
-
-Input.defaultProps = {
-    'isNumeric': false
-}
+  const [isFocused, setIsFocused] = useState(false);
+  const [hidePassword, setHidePassword] = useState(password);
+  return (
+    <View style={[styles.inputView, style]}>
+      <Text style={styles.label}>{labelName}</Text>
+      <View style={[styles.inputContainer]}>
+        <TextInput
+          secureTextEntry={secure}
+          autoCorrect={false}
+          {...props}
+        />
+      </View>
+    </View>
+  );
+};

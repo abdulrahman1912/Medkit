@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
         height: Dimensions.get('window').height,
         width: Dimensions.get('screen').width,
         backgroundColor:'#91A0F6',
+        
     },
 
     textstyle:{

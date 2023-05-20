@@ -8,6 +8,7 @@ import {
   ForgotPassword, 
   OtpVerification,
   ConfirmNewPassword,
+  Register,
 
 
 } from "../Screens";
@@ -16,7 +17,7 @@ const Stack = createNativeStackNavigator();
 export const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="OtpVerification">
+      <Stack.Navigator initialRouteName="Register">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
@@ -48,6 +49,11 @@ export const StackNavigator = () => {
         <Stack.Screen
           name="ConfirmNewPassword"
           component={ConfirmNewPassword}
+          options={{headerShown:false}}
+        />
+        <Stack.Screen
+          name="Register"
+          component={Register}
           options={{headerShown:false}}
         />
       </Stack.Navigator>

@@ -7,7 +7,7 @@ import Google from "../../assets/icons/google.svg";
 
 
 
-export const Login = ({ navigation }) => {
+export const Register = ({ navigation }) => {
   
   const [loginDetails, setLoginDetails] = useState({
     email: "",
@@ -21,8 +21,8 @@ const [checked, setChecked] = useState(false);
     container: {
       backgroundColor: "#fff",
       borderRadius: 50,
-      marginTop: 40,
-      height: "90%",
+      marginTop: 10,
+      height: "100%",
       width: "100%",
       paddingHorizontal: 20,
       alignItems: "center",
@@ -41,7 +41,6 @@ const [checked, setChecked] = useState(false);
       justifyContent:"center",
       alignItems:"center",
       flexDirection:"row",
-      
       },
 
    
@@ -89,41 +88,41 @@ const [checked, setChecked] = useState(false);
 
   return (
     <Page>
-      <Image style={styles.imgcontainer} width="100%" height="15%" />
-
+      {/* <Image style={styles.imgcontainer} width="100%" height="10%" /> */}
+    <Text style={{fontSize:50,fontWeight:700, color:"#fff", marginLeft:10}}>MEDKIT</Text>
       <View style={styles.container}>
-        <Text style={{fontSize:25,}}>Sign In</Text>
+        <Text style={{fontSize:25,}}>Register</Text>
         <Text style={{marginTop:10, color:"#615B5B"}}>Please fill in your details</Text>
+       
+        <Input
+        labelName="Full Name"
+        placeholder="Enter your Full Name"
+        />
+
         <Input
         labelName="Email"
         placeholder="Enter your email"
+        style={{paddingTop:2}}
         />
 
         <Input
         labelName="Password"
         placeholder="Enter your password"
         secureTextEntry={true}
-        style={{paddingTop:15}}
+        style={{paddingTop:2}}
+        />
+          <Input
+        labelName="Confirm Password"
+        placeholder="Enter your password"
+        secureTextEntry={true}
+        style={{paddingTop:2}}
         />
 
-        <View style={{...styles.container2, justifyContent:"space-between", width:"105%", marginVertical:20}}>
-        <View style={styles.container2}>
-        <Checkbox
-          status={checked ? 'checked' : 'unchecked'}
-          onPress={()=>{
-            setChecked(!checked);}}
-            color="#91A0F6"
-        />
-        <Text>Remember Me</Text>
-        </View>
-        <Button mode="text" textColor="#91A0F6"  onPress={() => navigation.navigate('ForgotPassword')}> 
-          Forgot Password?
-        </Button>
-        </View>
-            <View style={{...styles.container2, marginVertical:10, gap: 35}}>
+      
+            <View style={{...styles.container2, marginVertical:25, gap: 35}}>
 
             <Pressable style={styles.button1}>
-              <Text style={{color:"#fff", fontSize:22}}>Login</Text>
+              <Text style={{color:"#fff", fontSize:22}}>Sign Up</Text>
               
             </Pressable>
 
@@ -134,12 +133,12 @@ const [checked, setChecked] = useState(false);
             
             </View>
 
-            <View style={{...styles.container3, gap:-10, marginVertical:20 }}>
+            <View style={{...styles.container3, gap:-10, }}>
             <View style={{ display:"flex", flexDirection:"row"}}>
-            <Text>Don't have an Account?</Text>
+            <Text>Already have an account?</Text>
             </View>
-            <Button mode="text" textColor="#91A0F6" onPress={() => navigation.navigate('Register')}  >
-          Register Now
+            <Button mode="text" textColor="#91A0F6" onPress={() => navigation.navigate('Login')} >
+          Login
         </Button>
       </View>
       </View>

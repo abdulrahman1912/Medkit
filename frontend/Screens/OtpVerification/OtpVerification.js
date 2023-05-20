@@ -74,7 +74,7 @@ export const OtpVerification = ({navigation}) => {
                         </Text>
                     )}
                 />
-             <ScreenBtn style={{marginVertical:245}}>Verify</ScreenBtn>
+             <ScreenBtn  onPress={() => navigation.navigate('ConfirmNewPassword')} style={{marginVertical:233}}>Verify</ScreenBtn>
             </View>
         </Page>
     )

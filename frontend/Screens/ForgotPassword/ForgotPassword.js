@@ -31,18 +31,9 @@ export const ForgotPassword = ({navigation}) => {
                 title={"Forgot Password"}
             />
             <View style={styles.container}>
-            <Text style={{fontSize:15, paddingTop:15}}>Enter your email for authentication</Text>
-            <Input
-        style={{...styles.inputcontainer, marginVertical:50}}
-        labelName="Email"
-        placeholder="johndoe@gmail.com"
-        type={'emailAddress'}
-        value={loginDetails.email}
-        onChange={(text) => setLoginDetails({ ...loginDetails, email: text })}
-        activeUnderlineColor={"#91A0F6"}
-        />
-
-        <ScreenBtn onPress={() => navigation.navigate('OtpVerification')} style={{marginVertical:275}}>Continue</ScreenBtn>
+            <Text style={{fontSize:15, paddingTop:15, fontWeight:400}}>Enter your email for authentication</Text>
+        <Input labelName={"Email"} placeholder={"Enter your email"} />
+        <ScreenBtn onPress={() => navigation.navigate('OtpVerification')} style={{marginVertical:328}}>Continue</ScreenBtn>
             </View>
 
         </Page>

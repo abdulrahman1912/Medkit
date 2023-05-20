@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
     "@react-native-community/checkbox": "^0.5.15",
     "@react-navigation/native-stack": "^6.9.12",
     "@react-navigation/stack": "^6.3.16",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@types/react": "^18.2.6",
     "react-native-svg-transformer": "^1.0.0"
   },
   "private": true
