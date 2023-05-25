@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "478511712066",
+    "project_id": "medkit-d268a",
+    "storage_bucket": "medkit-d268a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478511712066:android:1c8e994c175dbeb865eadb",
+        "android_client_info": {
+          "package_name": "com.Medkit.Medkit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYgXMTnHVl8aX3VFecK-nrRAg3iX3uFJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
