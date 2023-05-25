@@ -1,8 +1,15 @@
 import { React, useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView ,Image} from "react-native";
 import { Page, Input, ScreenBtn } from "../../components";
 import DropDownPicker from "react-native-dropdown-picker";
 import Toast  from "react-native-toast-message";
+import {
+  ImagePickerAsset,
+  ImagePickerOptions,
+  launchCameraAsync,
+  launchImageLibraryAsync,
+} from "expo-image-picker";
+
 
 
 function App() {
@@ -24,13 +31,7 @@ function App() {
     />
   );
 }
-import {
-  ImagePickerAsset,
-  ImagePickerOptions,
-  launchCameraAsync,
-  launchImageLibraryAsync,
-} from "expo-image-picker";
-import Image from "../../assets/images/defaultpic.svg";
+
 export const Fillprofile = ({ navigation }) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
@@ -65,9 +66,13 @@ export const Fillprofile = ({ navigation }) => {
     },
   });
 
+  const maleHairstyles = ['short03', 'short07', 'short08', 'short14'];
+  const femaleHairstyles = ['long06', 'long09', 'long12', 'long18'];
+    const avatarUrl = `https://api.dicebear.com/5.x/adventurer/png?seed=${"F"}&backgroundColor=b6e3f4,c0aede,d1df49&hair=${'long06'}`
+
   return (
     <Page>
-      <Image style={styles.imgcontainer} width="100%" height="15%" />
+      <Image style={{ width: 131, height: 131, borderRadius: 25,...styles.imgcontainer }} source={{uri:avatarUrl}} width="100%" height="15%" />
       <View style={styles.container}>
         <Text
           style={{
