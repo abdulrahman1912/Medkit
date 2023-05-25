@@ -44,7 +44,9 @@ export const Input = ({
   onChange,
   value,
   onFocus = () => {},
+  maxLength,
   ...props
+  
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [hidePassword, setHidePassword] = useState(password);
@@ -58,6 +60,7 @@ export const Input = ({
           autoCorrect={false}
           keyboardType={type}
           onChangeText={onChange}
+          maxLength={maxLength}
           value={value}
           {...props}
         />

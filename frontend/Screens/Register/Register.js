@@ -4,17 +4,35 @@ import {Button} from "react-native-paper";
 import { Page, Input} from "../../components";
 import Image from "../../assets/images/Medkit-logo.svg";
 import Google from "../../assets/icons/google.svg";
-
+import { useAtom } from "jotai";
+import {signupFlowAtom} from '../../jotai-store'
+import Toast from "react-native-toast-message";
 
 
 export const Register = ({ navigation }) => {
-  
+  const [signUpFlow, setSignUpFlow] = useAtom(signupFlowAtom);
+
   const [loginDetails, setLoginDetails] = useState({
     email: "",
     password: "",
     type: ""
 })
-const [showPassword] = useState(false);
+const [showPassword,setshowPassword] = useState(false);
+const moveToNextPage = () => {
+
+  if(!signUpFlow.email || !signUpFlow.password) {
+    return Toast.show({
+      autoHide: true,
+      text1: "Please fill in all fields",
+      type: "error",
+      position: "top",
+    })
+  }
+
+  
+
+  navigation.navigate('Fill-Profile')
+}
 
 
   const styles = StyleSheet.create({
@@ -85,6 +103,7 @@ const [showPassword] = useState(false);
 
     
   });
+  console.log(signUpFlow)
 
   return (
     <Page>
@@ -97,31 +116,35 @@ const [showPassword] = useState(false);
         <Input
         labelName="Full Name"
         placeholder="Enter your Full Name"
+        onChange={(text) => setSignUpFlow({ ...signUpFlow, fullname: text })}
         />
 
         <Input
         labelName="Email"
         placeholder="Enter your email"
         style={{paddingTop:2}}
+        onChange={(text) => setSignUpFlow({ ...signUpFlow, email: text })}
         />
 
         <Input
         labelName="Password"
         placeholder="Enter your password"
         secureTextEntry={true}
+        onChange={(text) => setSignUpFlow({ ...signUpFlow, password: text })}
         style={{paddingTop:2}}
         />
           <Input
         labelName="Confirm Password"
         placeholder="Enter your password"
         secureTextEntry={true}
+        onChange={(text) => setSignUpFlow({ ...signUpFlow, confirmpassword: text })}
         style={{paddingTop:2}}
         />
 
       
             <View style={{...styles.container2, marginVertical:25, gap: 35}}>
 
-            <Pressable style={styles.button1}>
+            <Pressable style={styles.button1} >
               <Text style={{color:"#fff", fontSize:22}}>Sign Up</Text>
               
             </Pressable>

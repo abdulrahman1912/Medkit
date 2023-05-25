@@ -65,14 +65,17 @@ export const Fillprofile = ({ navigation }) => {
       borderColor:"#fff"
     },
   });
-
+  function getRandomElement(array){
+    const randomIndex = Math.floor(Math.random() * array.length);
+    return array[randomIndex];
+}
   const maleHairstyles = ['short03', 'short07', 'short08', 'short14'];
   const femaleHairstyles = ['long06', 'long09', 'long12', 'long18'];
     const avatarUrl = `https://api.dicebear.com/5.x/adventurer/png?seed=${"F"}&backgroundColor=b6e3f4,c0aede,d1df49&hair=${'long06'}`
 
   return (
     <Page>
-      <Image style={{ width: 131, height: 131, borderRadius: 25,...styles.imgcontainer }} source={{uri:avatarUrl}} width="100%" height="15%" />
+      <Image style={{ width: 131, height: 131, borderRadius: 25,...styles.imgcontainer }} source={{uri:avatarUrl}} />
       <View style={styles.container}>
         <Text
           style={{
