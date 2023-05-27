@@ -4,7 +4,12 @@ import { atom } from 'jotai';
 
 
 
-export const signupFlowAtom = atom(null)
+export const signupFlowAtom = atom({
+    email: "",
+    password:'',
+    fullname:'',
+    confirmpassword:'',
+})
 
 export const locationAtom = atom({
     latitude: 0,
