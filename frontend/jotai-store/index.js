@@ -11,10 +11,7 @@ export const signupFlowAtom = atom({
     confirmpassword:'',
 })
 
-export const locationAtom = atom({
-    latitude: 0,
-    longitude: 0
-})
+export const otpAtom = atom(null)
 
 export const currentUserAtom = atom(null)
 
