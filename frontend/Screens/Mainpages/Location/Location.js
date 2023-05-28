@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { StyleSheet, Text, View, Pressable, Dimensions } from "react-native";
 import MapView, { Callout, Circle, Marker } from "react-native-maps"
-import { Pagemain, Page, Header, BackButton } from "../../../components";
+import { Pagemain, Page, Header, BackButton, ScreenBtn } from "../../../components";
 
 
 export const Location = ({ navigation }) => {
@@ -70,7 +70,8 @@ export const Location = ({ navigation }) => {
             <Header
                 startIcon={<BackButton navigation={navigation} />}
                 title={'Pharmaceutical Stores'} />
-            
+
+<ScreenBtn onPress={() => navigation.navigate('Pharmacy')} style={{marginVertical:328}}>Continue</ScreenBtn>
 
         </Page>
 
