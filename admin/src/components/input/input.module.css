@@ -1,0 +1,28 @@
+.FormGroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.FormGroup label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.input {
+    border: 1px solid #000;
+    border-radius: 8.6385px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    outline: none;
+}
+
+.input:hover {
+    border: 1.7277px solid #91A0F6;
+   
+}

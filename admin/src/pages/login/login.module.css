@@ -1,0 +1,36 @@
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    align-items: center;
+    height: 100vh;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 400px;
+    padding: 10px;
+}
+
+.loginForm>h1 {
+    color: #91A0F6;
+    font-weight: 600;
+    font-size: 30.2347px;
+    line-height: 41px;
+    margin: 0;
+}
+.loginForm> p{
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 23px;
+    color: #5F77E1;
+    align-self: self-start;
+    margin-top: -10px;
+}
+.loginForm > span{
+   text-align: center;
+}
