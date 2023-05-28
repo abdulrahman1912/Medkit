@@ -106,7 +106,7 @@ export const Home = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView  showsVerticalScrollIndicator={false}>
+      <ScrollView  showsVerticalScrollIndicator={false} style={{marginBottom:20, marginTop:10}}>
         <View style={styles.header}>
           <View style={{...styles.header2,    marginTop: 20,}}>
             <Avatar />
@@ -136,7 +136,7 @@ export const Home = ({ navigation }) => {
             <Locatemed width={320} height={150} />
           </View>
         </Pressable>
-
+            {/* slide for medicine category  */}
         {/* <View style={{ ...styles.header, marginTop: 12 }}>
           <Text style={{ fontSize: 19, fontWeight: 500 }}>Category</Text>
           <Button mode="text" textColor="#91A0F6" style={{ marginTop: 2 }}>
@@ -190,7 +190,7 @@ export const Home = ({ navigation }) => {
         <View style={{marginTop:15}}>
             <Text style={{fontSize:16, }}>Most Visited Pharmacy</Text>
             <View style={{...styles.header2, marginTop:5, backgroundColor:"#91A0F680",height:200, width:"100%",borderRadius:10, gap:5}}>
-            <Hmedix width={"50%"} height={100} />
+            <H-medix width={"50%"} height={100} />
             <View>
             <Text style={{fontSize:20, fontWeight:500,marginBottom:5}}>H-Medix</Text>
             <Text style={{fontSize:14, fontWeight:500,marginBottom:5}}>Located in 1st avenue,{'\n'}Gwarimpa, Abuja</Text>

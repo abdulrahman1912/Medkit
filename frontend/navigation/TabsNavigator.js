@@ -50,17 +50,17 @@ export const TabsNavigator = () => {
         options={{
           tabBarLabel: <Text style={styles.label}>Location</Text>,
           tabBarIcon: ({ color, focused }) =>
-          focused ? <LocationActive/> : <Locationicon fill={color} />,
+            focused ? <LocationActive /> : <Locationicon fill={color} />,
         }}
       />
 
-<Tabs.Screen
+      <Tabs.Screen
         name="Favourites"
         component={Favourites}
         options={{
           tabBarLabel: <Text style={styles.label}>Favourites</Text>,
           tabBarIcon: ({ color, focused }) =>
-          focused ? <FavouritesActive/> : <Favouritesicon fill={color} />,
+            focused ? <FavouritesActive /> : <Favouritesicon fill={color} />,
         }}
       />
       <Tabs.Screen
@@ -69,7 +69,7 @@ export const TabsNavigator = () => {
         options={{
           tabBarLabel: <Text style={styles.label}>Cart</Text>,
           tabBarIcon: ({ color, focused }) =>
-          focused ? <CartActive/> : <Carticon fill={color} />,
+            focused ? <CartActive /> : <Carticon fill={color} />,
         }}
       />
       <Tabs.Screen
@@ -78,7 +78,7 @@ export const TabsNavigator = () => {
         options={{
           tabBarLabel: <Text style={styles.label}>Profile</Text>,
           tabBarIcon: ({ color, focused }) =>
-          focused ? <ProfileActive/> : <Profileicon fill={color} />,
+            focused ? <ProfileActive /> : <Profileicon fill={color} />,
         }}
       />
     </Tabs.Navigator>
