@@ -23,17 +23,18 @@
     font-size: 30.2347px;
     line-height: 41px;
     margin: 0;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
    
 }
 .loginForm> p{
     font-weight: 400;
     font-size: 17px;
     line-height: 23px;
-    color: #5F77E1;
-    align-self: self-start;
-    margin-top: -10px;
+    margin: 0;
+    margin-bottom: 40px;
+    color: black;
 }
+
 .loginForm > span{
    text-align: center;
 }

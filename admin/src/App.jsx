@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {Login,ForgotPassword} from './pages'
+import {Login,ForgotPassword,OtpVerify} from './pages'
 import './App.css'
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <ForgotPassword/>
+      <OtpVerify/>
     </div>
   )
 }

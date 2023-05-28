@@ -1,20 +1,20 @@
 import React from 'react'
-import Style from './forgot.module.css'
+import Style from '../Forgot-Password/forgot.module.css'
 import logobig from '../../assets/logobig.svg'
 import { FormGroup,Button } from '../../components'
 
-export const ForgotPassword = () => {
+export const OtpVerify = () => {
   return (
     <div className={Style.loginContainer}>
       <img src={logobig} alt="" />
       <div className={Style.loginForm}>
         <h1 >Forgot Your Password</h1>
-        <p>Please enter your email to receive a verification code</p>
+        <p>Please enter the verification code sent to your email</p>
         <FormGroup
-          label={'Email'}
-          type={'email'}
-          name={'email'}
-          placeholder={'rajmuzz@gmail.com'}
+          label={'Verification Code'}
+          type={'number'}
+          name={'otp'}
+          placeholder={'00000'}
         />
         
         <Button text={'Continue'} style={{marginTop:100}} />

@@ -2,6 +2,9 @@
   background-color: #91A0F6;
   color: white;
   font-family: 'Nunito';
+  
+}
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
