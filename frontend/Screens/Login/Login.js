@@ -4,7 +4,8 @@ import {Checkbox, Button} from "react-native-paper";
 import { Page, Input} from "../../components";
 import Image from "../../assets/images/Medkit-logo.svg";
 import Google from "../../assets/icons/google.svg";
-
+import api from '../../api';
+import  Toast  from "react-native-toast-message";
 
 
 export const Login = ({ navigation }) => {
@@ -86,6 +87,26 @@ const [checked, setChecked] = useState(false);
 
     
   });
+  const moveToNextPage = async()=>{
+    await api.post('/login',loginDetails).then(()=>{
+     return Toast.show({
+      type:'success',
+      text1: 'login succressful',
+      position: 'top',
+      autoHide: true
+     })
+    }) .catch(() => { 
+      return Toast.show({
+          type: 'error',
+          text1: 'Incorrect email or password',
+          position: 'top',
+          autoHide: true
+      })
+
+
+  })
+    navigation.navigate('Tabs')
+  }
 
   return (
     <Page>
@@ -97,6 +118,7 @@ const [checked, setChecked] = useState(false);
         <Input
         labelName="Email"
         placeholder="Enter your email"
+        onChange={(text) => setLoginDetails({ ...loginDetails, email: text })}
         />
 
         <Input
@@ -104,6 +126,7 @@ const [checked, setChecked] = useState(false);
         placeholder="Enter your password"
         secureTextEntry={true}
         style={{paddingTop:15}}
+        onChange={(text) => setLoginDetails({ ...loginDetails, password: text })}
         />
 
         <View style={{...styles.container2, justifyContent:"space-between", width:"105%", marginVertical:20}}>
@@ -122,7 +145,7 @@ const [checked, setChecked] = useState(false);
         </View>
             <View style={{...styles.container2, marginVertical:10, gap: 35}}>
 
-            <Pressable style={styles.button1}>
+            <Pressable style={styles.button1} onPress={moveToNextPage}>
               <Text style={{color:"#fff", fontSize:22}}>Login</Text>
               
             </Pressable>

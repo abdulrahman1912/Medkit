@@ -61,7 +61,7 @@ export const StackNavigator = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Fillprofile"
+          name="FillProfile"
           component={Fillprofile}
           options={{ headerShown: false }}
         />

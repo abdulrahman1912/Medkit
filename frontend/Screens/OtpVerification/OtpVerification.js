@@ -2,7 +2,10 @@ import {View, Text, StyleSheet} from 'react-native';
 import { BackButton, Header, Page ,ScreenBtn } from '../../components';
 import {CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell} from 'react-native-confirmation-code-field';
 import { useState } from "react";
-
+import { otpAtom } from '../../jotai-store';
+import { useAtom } from 'jotai';
+import api from "../../api";
+import { Toast } from "react-native-toast-message/lib/src/Toast";
 
 export const OtpVerification = ({navigation}) => {
     const [value, setValue] = useState('');
@@ -11,7 +14,8 @@ export const OtpVerification = ({navigation}) => {
         value,
         setValue,
     });
-    const CELL_COUNT = 4;
+    const [otp]= useAtom(otpAtom)
+    const CELL_COUNT = 5;
     const styles = StyleSheet.create ({
         container: {
             backgroundColor: "#fff",
@@ -46,6 +50,20 @@ export const OtpVerification = ({navigation}) => {
             },
 
     })
+    console.log(otp)
+   const MoveToNextPage = async()=>{
+         if(Number(value) === otp.code){
+            navigation.navigate('ConfirmNewPassword')
+         }else{
+          
+            Toast.show({
+                type: 'error',
+                text1: `wrong otp code`,
+                position: 'top',
+                autoHide: true
+              })
+         }
+   }
 
     return(
         <Page>
@@ -74,7 +92,7 @@ export const OtpVerification = ({navigation}) => {
                         </Text>
                     )}
                 />
-             <ScreenBtn  onPress={() => navigation.navigate('ConfirmNewPassword')} style={{marginVertical:233}}>Verify</ScreenBtn>
+             <ScreenBtn  onPress={MoveToNextPage} style={{marginVertical:233}}>Verify</ScreenBtn>
             </View>
         </Page>
     )
