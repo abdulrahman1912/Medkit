@@ -14,7 +14,7 @@ export const Dashboard = () => {
             <div className={Style.left}>
                 <div className={Style.status}>
                     <form>
-                        <input type="search" placeholder="Search..."/>
+                        <input type="search" placeholder="Search customer by name or phone number"/>
                             <button type="submit">Search</button>
                     </form>
                    <Row img={profile} text={'Hi, Raji'} style={{flexDirection:"row-reverse"}}/>
