@@ -159,6 +159,34 @@ export const ScreenBtn1 = ({
 };
 
 
+export const Smallbtn = ({
+  style,
+  onPress,
+  children,
+  textColor,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+      <Button
+      {...props}
+      labelStyle={styles.textStyle3}
+      onPress={onPress}
+      width={width}
+      height={height}
+      buttonColor={"#91A0F6"}
+      textColor={textColor || "#fff"}
+      style={{ ...styles.btn3, ...style }}
+    >
+      {children}
+    </Button>
+
+    
+  );
+};
+
+
 CustomBtn.defaultProps = {
   width: "40%",
 };

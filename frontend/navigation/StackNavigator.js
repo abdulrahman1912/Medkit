@@ -13,6 +13,7 @@ import {
   Pharmacy,
   Hmedix,
   HmedixPage,
+  Categories,
 } from "../Screens";
 
 import { TabsNavigator } from "./TabsNavigator";
@@ -21,7 +22,7 @@ const Stack = createNativeStackNavigator();
 export const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="HmedixPage">
+      <Stack.Navigator initialRouteName="Categories">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
@@ -87,6 +88,12 @@ export const StackNavigator = () => {
         <Stack.Screen
           name="HmedixPage"
           component={HmedixPage}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Categories"
+          component={Categories}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
