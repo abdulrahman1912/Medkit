@@ -1,0 +1,14 @@
+.Cotainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    
+
+}
+.Cotainer > img{
+    width: 40px;
+    object-fit: cover;
+
+}

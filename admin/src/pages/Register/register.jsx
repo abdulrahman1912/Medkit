@@ -2,8 +2,10 @@ import React from 'react'
 import Style from '../login/login.module.css'
 import logobig from '../../assets/logobig.svg'
 import { FormGroup,Button } from '../../components'
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
+  const navigate = useNavigate()
   return (
     <div className={Style.loginContainer}>
       <img src={logobig} alt="" />
@@ -41,7 +43,7 @@ export const Register = () => {
         />
         
         <Button text={'sign Up'} style={{width:300}} />
-        <span style={{color:'#000',width:"50%"}}>Already have an account? <p style={{ color: '#5F77E1',margin:0}}>Login</p></span>
+        <span style={{color:'#000',width:"50%"}}>Already have an account? <p style={{ color: '#5F77E1',margin:0}} onClick={()=>{navigate('/')}}>Login</p></span>
       </div>
     </div>
   )
