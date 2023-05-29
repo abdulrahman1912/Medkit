@@ -1,0 +1,26 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    background-color: #e2e5f6;
+    color: black;
+    padding-top: 20px;
+    height: 100vh;
+}
+
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+   
+    color: black;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}

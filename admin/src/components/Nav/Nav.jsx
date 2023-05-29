@@ -22,7 +22,7 @@ export const Nav = () => {
         <Row img={Transaction} text="Transaction" onClick={()=>{navigate('/dashboard/Transaction')}}/>
         <Row img={prescribtion} text="Prescribtion" onClick={()=>{navigate('/dashboard/prescribtion')}}/>
       </div>
-      <Row img={signout} text='Sign Out'/>
+      <Row img={signout} text='Sign Out' onClick={()=>{navigate('/')}}/>
     </div>
   )
 }
