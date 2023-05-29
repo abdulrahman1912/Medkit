@@ -4,11 +4,24 @@
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
+    width: 90%;
     
 
 }
-.Cotainer > img{
+.Cotainer1{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    background-color: #2e334cf2;
+    width: 90%;
+    
+
+}
+.Cotainer > img,.Cotainer1>img{
     width: 40px;
     object-fit: cover;
 
 }
+
