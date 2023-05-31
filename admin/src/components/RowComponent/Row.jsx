@@ -11,3 +11,12 @@ export const Row = ({img,text,onClick,style,focus}) => {
     </div>
   )
 }
+
+export const SpaceBetween= ({text1,text2,style})=>{
+  return(
+    <div className={Style.head}>
+    <h3 style={style}>{text1}</h3>
+    {text2}
+  </div>
+  )
+}

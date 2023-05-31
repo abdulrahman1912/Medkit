@@ -8,6 +8,16 @@
     
 
 }
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+   
+    color: black;
+}
 .Cotainer1{
     display: flex;
     flex-direction: row;
