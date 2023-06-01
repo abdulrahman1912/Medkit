@@ -19,7 +19,7 @@
     width: 100%;
     padding: 5px;
 }
-.up > div{
+.up > .img{
     width: 45px;
     height: 45px;
     background-color: #e2e5f6;
@@ -38,4 +38,6 @@
     text-align:center;
     font-size: 22px;
 }
-
+.text{
+    max-width: 75%;
+}

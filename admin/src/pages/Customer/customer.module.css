@@ -1,0 +1,10 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    background-color: #e2e5f6;
+    color: black;
+    padding-block: 20px;
+    min-height: 91vh;
+    justify-content: space-between;
+    
+}
