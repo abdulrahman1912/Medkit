@@ -1,6 +1,5 @@
 export * from "./Home/Home";
 export * from "./Home/Categories";
-export * from "./Home/Drugs/Antimalaria";
 export * from "./Location/Hmedix/HmedixPage";
 export * from "./Location/Hmedix/Hmedix"
 export * from "./Location/Pharmacy";

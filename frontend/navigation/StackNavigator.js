@@ -14,6 +14,7 @@ import {
   Hmedix,
   HmedixPage,
   Categories,
+  Antimalaria,
 } from "../Screens";
 
 import { TabsNavigator } from "./TabsNavigator";
@@ -94,6 +95,12 @@ export const StackNavigator = () => {
         <Stack.Screen
           name="Categories"
           component={Categories}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Antimalaria"
+          component={Antimalaria}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

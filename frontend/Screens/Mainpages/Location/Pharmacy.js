@@ -50,7 +50,7 @@ export const Pharmacy = ({ navigation }) => {
         <Text style={{ marginTop: 20, fontSize: 18, fontWeight: 500 }}>
           Nearby Pharmaceutical Stores Found
         </Text>
-        <Pressable  onPressIn={() => navigation.navigate('')} style={{ ...styles.pharm_container, gap: 5 }}>
+        <Pressable  onPressIn={() => navigation.navigate('Hmedix')} style={{ ...styles.pharm_container, gap: 5 }}>
           <Hmedix />
           <View style={styles.text_container}>
             <Text style={{ fontSize: 20 }}>H-medix</Text>
