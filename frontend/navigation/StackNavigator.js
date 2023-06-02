@@ -13,6 +13,7 @@ import {
   Pharmacy,
   Hmedix,
   HmedixPage,
+  Productdetail,
   Categories,
   Antimalaria,
 } from "../Screens";
@@ -23,7 +24,7 @@ const Stack = createNativeStackNavigator();
 export const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Categories">
+      <Stack.Navigator initialRouteName="Productdetail">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
@@ -101,6 +102,12 @@ export const StackNavigator = () => {
         <Stack.Screen
           name="Antimalaria"
           component={Antimalaria}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Productdetail"
+          component={Productdetail}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

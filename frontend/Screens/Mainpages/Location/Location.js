@@ -71,7 +71,7 @@ export const Location = ({ navigation }) => {
                 startIcon={<BackButton navigation={navigation} />}
                 title={'Pharmaceutical Stores'} />
 
-<ScreenBtn onPress={() => navigation.navigate('Pharmacy')} style={{marginVertical:328}}>Continue</ScreenBtn>
+
 
         </Page>
 
