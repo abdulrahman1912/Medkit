@@ -24,7 +24,7 @@ const Stack = createNativeStackNavigator();
 export const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Productdetail">
+      <Stack.Navigator initialRouteName="Tabs">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
