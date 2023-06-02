@@ -6,6 +6,7 @@
     justify-content: space-between;
     width: 15%;
     height: 100vh;
+  
 }
 .middle{
     display: flex;
@@ -18,6 +19,7 @@
 .Container > img{
     width: 90%;
 }
+
 
 
 

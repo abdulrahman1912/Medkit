@@ -24,7 +24,7 @@ export const Login = () => {
           placeholder={'123456'}
         />
         <p onClick={()=>{navigate('/forgotPassword')}}>Forgot password?</p>
-        <Button text={'Login'} style={{width:300}} />
+        <Button text={'Login'} style={{width:300}} onClick={()=>{navigate('/dashboard/main')}}/>
         <span style={{color:'#000',width:"50%"}}>Don’t have an account? <p style={{ color: '#5F77E1',margin:0}} onClick={()=>{navigate('/register')}} >Sign Up</p></span>
       </div>
     </div>

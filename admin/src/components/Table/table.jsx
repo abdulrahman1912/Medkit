@@ -131,42 +131,94 @@ export const tabledata = [
         TimeStamp:'april 20 -  7:00pm'
     }]
 
-export const tabledata2 = [
-    {
-        Values:['1','Raji',"kingraj133@gmail.com",'08118529085','Male'],
-        Status:'pending'
-    },
-    {
-      Values:  ['2','Abdulrahman',"abdul@gmail.com",'08223459567','Male'],
-        Status:'failed'
-    },
-    {
-        Values:['3','John',"john@example.com",'1234567890','Male'],
-        Status:'pending'
-    },
-    {
-        Values:  ['4','Jane',"jane@example.com",'9876543210','Female'],
-        Status:'failed'
-    },
-    {
-        Values:  ['5','Alex',"alex@example.com",'5555555555','Male'],
-        Status:'success'
-    },
-    {
-        Values:  ['6','Sarah',"sarah@example.com",'1111111111','Female'],
-        Status:'pending'
-    },
-    {
-        Values:  ['6','Jane',"jane@example.com",'9876543210','Female'],
-        Status:'failed'
-    },
-    {
-        Values:  ['7','Alex',"alex@example.com",'5555555555','Female'],
-        Status:'success'
-    },
-   
-   
-];
+    export const tabledata2 = [
+        {
+          Values: ['1', 'Raji', "kingraj133@gmail.com", '08118529085', 'Male'],
+          Status: 'pending'
+        },
+        {
+          Values: ['2', 'Abdulrahman', "abdul@gmail.com", '08223459567', 'Male'],
+          Status: 'failed'
+        },
+        {
+          Values: ['3', 'John', "john@example.com", '1234567890', 'Male'],
+          Status: 'pending'
+        },
+        {
+          Values: ['4', 'Jane', "jane@example.com", '9876543210', 'Female'],
+          Status: 'failed'
+        },
+        {
+          Values: ['5', 'Alex', "alex@example.com", '5555555555', 'Male'],
+          Status: 'success'
+        },
+        {
+          Values: ['6', 'Sarah', "sarah@example.com", '1111111111', 'Female'],
+          Status: 'pending'
+        },
+        {
+          Values: ['7', 'Jane', "jane@example.com", '9876543210', 'Female'],
+          Status: 'failed'
+        },
+        {
+          Values: ['8', 'Alex', "alex@example.com", '5555555555', 'Female'],
+          Status: 'success'
+        },
+        // Dummy data entries
+        {
+          Values: ['9', 'John', 'john.doe@example.com', '1234567890', 'Male'],
+          Status: 'pending'
+        },
+        {
+          Values: ['10', 'Jane', 'jane.smith@example.com', '9876543210', 'Female'],
+          Status: 'failed'
+        },
+        {
+          Values: ['11', 'Michael', 'michael.johnson@example.com', '5555555555', 'Male'],
+          Status: 'success'
+        },
+        // Additional 10 dummy data entries
+        {
+          Values: ['12', 'Emma', 'emma.wilson@example.com', '5555555555', 'Female'],
+          Status: 'pending'
+        },
+        {
+          Values: ['13', 'William', 'william.brown@example.com', '1234567890', 'Male'],
+          Status: 'failed'
+        },
+        {
+          Values: ['14', 'Olivia', 'olivia.jones@example.com', '9876543210', 'Female'],
+          Status: 'success'
+        },
+        {
+          Values: ['15', 'James', 'james.davis@example.com', '5555555555', 'Male'],
+          Status: 'pending'
+        },
+        {
+          Values: ['16', 'Ava', 'ava.miller@example.com', '1234567890', 'Female'],
+          Status: 'failed'
+        },
+        {
+          Values: ['17', 'Liam', 'liam.jackson@example.com', '9876543210', 'Male'],
+          Status: 'success'
+        },
+        {
+          Values: ['18', 'Sophia', 'sophia.thompson@example.com', '5555555555', 'Female'],
+          Status: 'pending'
+        },
+        {
+          Values: ['19', 'Noah', 'noah.white@example.com', '1234567890', 'Male'],
+          Status: 'failed'
+        },
+        {
+          Values: ['20', 'Isabella', 'isabella.clark@example.com', '9876543210', 'Female'],
+          Status: 'success'
+        },
+        {
+          Values: ['21', 'Benjamin', 'benjamin.green@example.com', '5555555555', 'Male'],
+          Status: 'pending'
+        },
+    ]
 
 
 

@@ -6,7 +6,8 @@
     padding-block: 20px;
     min-height: 91vh;
     justify-content: space-between;
-    
+    overflow: scroll;
+    gap: 20px;
 }
 .row{
     display: flex;

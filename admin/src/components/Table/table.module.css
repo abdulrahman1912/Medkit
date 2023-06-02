@@ -6,6 +6,8 @@ table{
     width: 95%;
     align-self: center;
     justify-self:center;
+    overflow: sc;
+
 }
 .head{
     background-color: #91A0F6;

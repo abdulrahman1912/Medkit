@@ -4,6 +4,9 @@
     background-color: #e2e5f6;
     color: black;
     padding-block: 20px;
+    height: max-content;
+    overflow: scroll;
+    gap: 20px;
     
 }
 
