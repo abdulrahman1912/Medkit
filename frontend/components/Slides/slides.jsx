@@ -1,4 +1,4 @@
-import { StyleSheet, View, FlatList,Text } from "react-native"
+import { StyleSheet, View, FlatList,Text ,Dimensions,ScrollView} from "react-native"
 import { Styles } from "../../utils/styles.utils"
 import { Button } from "react-native-paper"
 
@@ -52,3 +52,11 @@ export const Slides = ({ title, containerStyle ,onPressSeeAll, children, data, s
     )
 
 } 
+export const MySlideComponent = ({width,children})=>{
+    const Width = width? width:Dimensions.get('window').width
+    return(
+        <ScrollView  horizontal={true} showsVerticalScrollIndicator style={{width:Width,display:'flex',flexDirection:'row',overflow:'scroll'}}>
+            {children}
+        </ScrollView>
+    )
+}
