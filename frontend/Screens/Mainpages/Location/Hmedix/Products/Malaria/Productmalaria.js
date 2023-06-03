@@ -5,12 +5,11 @@ import {
   Header,
   BackButton,
   Alert,
-  ScreenBtn,
-} from "../../../../components";
-import Comart from "../../../../assets/medicine/comart.svg";
-import Addcart from "../../../../assets/icons/addcart.svg";
-import Illustrate from "../../../../assets/illustrations/addedtocart.svg";
-export const Productmalaria= ({ navigation }) => {
+} from "../../../../../../components";
+import Comart from "../../../../../../assets/medicine/comart.svg";
+import Addcart from "../../../../../../assets/icons/addcart.svg";
+import Illustrate from "../../../../../../assets/illustrations/addedtocart.svg";
+export const Productmalaria = ({ navigation }) => {
   const [alert, setAlert] = useState(false);
   const styles = StyleSheet.create({
     container: {

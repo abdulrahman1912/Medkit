@@ -136,7 +136,7 @@ export const HmedixPage = ({ navigation }) => {
                 </Text>
                 <View style={{ display: "flex", flexDirection: "row", gap:12 }}>
                   <Heart />
-                  <TouchableOpacity onPress={""} style={styles.button}>
+                  <TouchableOpacity onPress={() => navigation.navigate('Productdetail')} style={styles.button}>
                     <Text
                       style={{
                         fontSize: 7,

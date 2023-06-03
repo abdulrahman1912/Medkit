@@ -6,3 +6,4 @@ export * from "./Header/header";
 export * from "./SearchBar/searchbar";
 export * from "./Slides/slides";
 export * from "./Card/card";
+export * from "./Alert/alert";

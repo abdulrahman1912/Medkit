@@ -13,7 +13,8 @@ import {
   Pharmacy,
   Hmedix,
   HmedixPage,
-  Productdetail,
+  Productmalaria,
+  Productpalaxin,
   Categories,
   Antimalaria,
 } from "../Screens";
@@ -24,7 +25,7 @@ const Stack = createNativeStackNavigator();
 export const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Productdetail">
+      <Stack.Navigator initialRouteName="Onboarding">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
@@ -106,8 +107,14 @@ export const StackNavigator = () => {
         />
 
         <Stack.Screen
-          name="Productdetail"
-          component={Productdetail}
+          name="Productmalaria"
+          component={Productmalaria}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Productpalaxin"
+          component={Productpalaxin}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
