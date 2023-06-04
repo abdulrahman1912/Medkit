@@ -8,6 +8,7 @@ import Fourthblubb from "../../assets/illustrations/blubb4.svg";
 import Illustration from "../../assets/illustrations/undraw_location_search_re_ttoj 1.svg";
 import Illustration2 from "../../assets/illustrations/undraw_order_delivered_re_v4ab 1.svg";
 import Illustration3 from "../../assets/illustrations/undraw_medical_care_movn 1.svg";
+import Next from "../../assets/icons/next.svg";
 
 
 export const Onboarding = ({navigation}) => {
@@ -75,7 +76,11 @@ const styles = StyleSheet.create({
           <Text style={styles.text1}>
             NO <Text style={{ color: "#5F77E1" }}>FAKE DRUGS</Text>
           </Text>
+          <View style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center", gap:5}}>
           <Text style={styles.text1}>LICENSED PHARMACISTS</Text>
+          <Next style={{marginTop:5}} onPress={() => navigation.navigate('Getstarted')}/>
+          </View>
+         
           <Secondblubb width="100%" height="35%"/>
         </View>
       </Swiper>

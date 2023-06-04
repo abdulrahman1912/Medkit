@@ -76,7 +76,7 @@ export const TabsNavigator = () => {
         name="Profile"
         component={Profile}
         options={{
-          tabBarLabel: <Text style={styles.label}>Profile</Text>,
+          tabBarLabel: <Text style={styles.label}>Account</Text>,
           tabBarIcon: ({ color, focused }) =>
             focused ? <ProfileActive /> : <Profileicon fill={color} />,
         }}

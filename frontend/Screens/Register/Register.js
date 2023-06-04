@@ -65,6 +65,7 @@ export const Register = ({ navigation }) => {
       console.log(message)
       return Toast.show({
         type: 'error',
+        color:"#000",
         text1: `${message}`,
         position: 'top',
         autoHide: true
@@ -180,7 +181,7 @@ export const Register = ({ navigation }) => {
         />
         <Input
           labelName="Confirm Password"
-          placeholder="Enter your password"
+          placeholder="Confirm your password"
           secureTextEntry={true}
           maxLength={10}
           onChange={(text) => setSignUpFlow({ ...signUpFlow, confirmpassword: text })}
@@ -194,7 +195,7 @@ export const Register = ({ navigation }) => {
             <Text style={{ color: "#fff", fontSize: 22 }}>Sign Up</Text>
 
           </Pressable>
-          <CustomBtn onPress={moveToNextPage}>register</CustomBtn>
+          <CustomBtn onPress={moveToNextPage}>Register</CustomBtn>
 
           <Pressable style={styles.button2}>
             <Google width={30} height={30} />

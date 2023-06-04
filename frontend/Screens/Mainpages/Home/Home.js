@@ -7,20 +7,22 @@ import {
   ScrollView,
   SafeAreaView,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
-import Swiper from "react-native-swiper";
 import { Button } from "react-native-paper";
 import {
   SearchBar,
   Slides,
   CustomCard,
   CardContent,
-  MySlideComponent
+  MySlideComponent,
 } from "../../../components";
 import Avatar from "../../../assets/images/profileavatar.svg";
 import Bellicon from "../../../assets/icons/bell.svg";
 import Locatemed from "../../../assets/images/locateimage.svg";
 import Hmedix from "../../../assets/images/hmedix.svg";
+import Coartem from "../../../assets/medicine/coartem.svg";
+import Palaxin from "../../../assets/medicine/palaxin.svg";
 import Panadol from "../../../assets/medicine/panadol.svg";
 import Robitussin from "../../../assets/medicine/robitussin.svg";
 export const Home = ({ navigation }) => {
@@ -28,7 +30,6 @@ export const Home = ({ navigation }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const styles = StyleSheet.create({
     container: {
-      height: "100%",
       position: "relative",
       display: "flex",
       flexDirection: "column",
@@ -104,17 +105,50 @@ export const Home = ({ navigation }) => {
       alignItems: "center",
     },
     spaceBetween: {
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between'
-    }
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+    },
+    product: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      marginTop: 10,
+      gap: 10,
+    },
+
+    product_item: {
+      width: 155,
+      height: 200,
+      backgroundColor: "#E2E4EB",
+      alignItems: "center",
+      paddingHorizontal: 10,
+      paddingTop: 5,
+      borderRadius: 10,
+    },
+
+    item: {
+      marginTop: 5,
+      backgroundColor: "#FFFFFF",
+      width: 120,
+      height: 110,
+      borderRadius: 10,
+      alignItems: "center",
+    },
+    text: {
+      alignSelf: "flex-start",
+    },
   });
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false} style={{ marginBottom: 20, marginTop: 10 }}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ marginBottom: 56, marginTop: 10, height: 200 }}
+      >
         <View style={styles.header}>
-          <View style={{ ...styles.header2, marginTop: 20, }}>
+          <View style={{ ...styles.header2, marginTop: 20 }}>
             <Avatar />
             <Text style={{ fontSize: 16, fontWeight: 500, marginLeft: 5 }}>
               Abdulrahman
@@ -131,7 +165,7 @@ export const Home = ({ navigation }) => {
         <Text style={{ marginTop: 20, fontSize: 15, fontWeight: 500 }}>
           Find pharmaceutical stores close to you
         </Text>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate('Location')}>
           <View
             style={{
               display: "flex",
@@ -142,78 +176,99 @@ export const Home = ({ navigation }) => {
             <Locatemed width={320} height={150} />
           </View>
         </Pressable>
-        {/* slide for medicine category  */}
-        {/* <View style={{ ...styles.header, marginTop: 12 }}>
-          <Text style={{ fontSize: 19, fontWeight: 500 }}>Category</Text>
-          <Button mode="text" textColor="#91A0F6" style={{ marginTop: 2 }}>
-            See all
-          </Button>
-        </View>
-
-        <Swiper
-          style={{ flex:1, height:600, marginTop: 10 }}
-          activeDotColor="#fff"
-          dotColor="#fff"
-        >
-          <View style={[styles.slide1, styles.subslide]}>
-            <View {...styles.subview}>
-              <Panadol />
-            </View>
-            <View style={{paddingHorizontal:12}}>
-            <Text style={{fontSize:16, fontWeight:500, textAlign: "auto"}}>
-              Panadol Tablets available in sachets and packs. Helps relieve body
-              pains and headache.
-            </Text>
-            </View>
-            
-          </View>
-          <View style={[styles.slide2, styles.subslide]}>
-          <View {...styles.subview}>
-              <Robitussin />
-            </View>
-            <View style={{paddingHorizontal:12}}>
-            <Text style={{fontSize:16, fontWeight:500, textAlign: "auto"}}>
-            Robitussin comes in bottles. Helps relieve running nose and cough. For young and adults.
-            </Text>
-            </View>
-            
-          </View>
-
-          <View style={[styles.slide3, styles.subslide]}>
-          <View {...styles.subview}>
-              <Panadol />
-            </View>
-            <View style={{paddingHorizontal:12}}>
-            <Text style={{fontSize:16, fontWeight:500, textAlign: "auto"}}>
-              Panadol Tablets available in sachets and packs. Helps relieve body
-              pains and headache.
-            </Text>
-            </View>
-            
-          </View>
-        </Swiper> */}
-
-        <View style={{ marginTop: 15 }}>
-          <Text style={{ fontSize: 16, }}>Most Visited Pharmacy</Text>
-          <View style={{ ...styles.header2, marginTop: 5, backgroundColor: "#91A0F680", height: 200, width: "100%", borderRadius: 10, gap: 5 }}>
-            <Hmedix width={"50%"} height={100} />
-            <View>
-              <Text style={{ fontSize: 20, fontWeight: 500, marginBottom: 5 }}>H-Medix</Text>
-              <Text style={{ fontSize: 14, fontWeight: 500, marginBottom: 5 }}>Located in 1st avenue,{'\n'}Gwarimpa, Abuja</Text>
-              <Text>Drugs available:{'\n'}Capsules, tablets, syrup,{'\n'}vitamins and more</Text>
-            </View>
-
-          </View>
-        </View>
-        <View style={{ ...styles.spaceBetween, marginBottom: 20 }}>
-          <Text style={{ fontSize: 16, }}>Categories</Text>
-          <Text style={{ color: '#91A0F680', textDecorationLine: "underline" }}>View all</Text>
+        <View style={{ ...styles.spaceBetween }}>
+          <Text style={{ fontSize: 16 }}>Categories</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Categories')} >
+            <Text style={{color:"#5F77E1", textDecorationLine:"underline"}}>See all</Text>
+          </TouchableOpacity>
         </View>
         <MySlideComponent>
-          {/**put your slide children here */}
-
+          {
+            <View style={{...styles.product, marginHorizontal:1}}>
+              <View style={styles.product_item}>
+                <View style={styles.item}>
+                  <Panadol width={100} height={100} />
+                </View>
+                <Text style={{ ...styles.text, marginTop: 5 }}>Panadol</Text>
+                <Text style={{ ...styles.text, fontSize: 10 }}>
+                  Panadol is a tablet drug.
+                </Text>
+                <Text style={{ ...styles.text, fontSize: 10 }}>
+                  Contains 20mg of Arthemefin.
+                </Text>
+              </View>
+              <View style={styles.product_item}>
+                <View style={styles.item}>
+                  <Robitussin width={100} height={100} />
+                </View>
+                <Text style={{ ...styles.text, marginTop: 5 }}>Robitussin</Text>
+                <Text style={{ ...styles.text, fontSize: 10 }}>
+                  Robitussin is a tablet drug.
+                </Text>
+                <Text style={{ ...styles.text, fontSize: 10 }}>
+                  Contains 20mg of Arthemefin.
+                </Text>
+              </View>
+            </View>
+          }
+          {
+            <View style={{...styles.product,marginLeft:20}}>
+              <View style={styles.product_item}>
+                <View style={styles.item}>
+                  <Coartem width={100} height={100} />
+                </View>
+                <Text style={{ ...styles.text, marginTop: 5 }}>Coartem</Text>
+                <Text style={{ ...styles.text, fontSize: 10 }}>
+                  Coartem is a tablet drug.
+                </Text>
+                <Text style={{ ...styles.text, fontSize: 10 }}>
+                  Contains 20mg of Arthemefin.
+                </Text>
+              </View>
+              <View style={styles.product_item}>
+                <View style={styles.item}>
+                  <Palaxin width={100} height={120} />
+                </View>
+                <Text style={{ ...styles.text, marginTop: 5 }}>P-Alaxin</Text>
+                <Text style={{ ...styles.text, fontSize: 10 }}>
+                  P-Alaxin is a tablet drug.
+                </Text>
+                <Text style={{ ...styles.text, fontSize: 10 }}>
+                  Contains 20mg of Arthemefin.
+                </Text>
+              </View>
+            </View>
+          }
         </MySlideComponent>
 
+        <View style={{ marginTop: 15 }}>
+          <Text style={{ fontSize: 16 }}>Most Visited Pharmacy</Text>
+          <View
+            style={{
+              ...styles.header2,
+              marginTop: 5,
+              backgroundColor: "#91A0F680",
+              height: 200,
+              width: "100%",
+              borderRadius: 10,
+              gap: 5,
+            }}
+          >
+            <Hmedix width={"50%"} height={100} />
+            <View>
+              <Text style={{ fontSize: 20, fontWeight: 500, marginBottom: 5 }}>
+                H-Medix
+              </Text>
+              <Text style={{ fontSize: 14, fontWeight: 500, marginBottom: 5 }}>
+                Located in 1st avenue,{"\n"}Gwarimpa, Abuja
+              </Text>
+              <Text>
+                Drugs available:{"\n"}Capsules, tablets, syrup,{"\n"}vitamins
+                and more
+              </Text>
+            </View>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

@@ -85,7 +85,7 @@ export const Antimalaria = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <Header startIcon={<BackButton />} title={"Anti-malaria"} />
+      <Header startIcon={<BackButton navigation={navigation} />} title={'Anti-malaria'} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{ marginTop: 10 }}

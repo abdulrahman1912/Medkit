@@ -55,7 +55,7 @@ export const Slides = ({ title, containerStyle ,onPressSeeAll, children, data, s
 export const MySlideComponent = ({width,children})=>{
     const Width = width? width:Dimensions.get('window').width
     return(
-        <ScrollView  horizontal={true} showsVerticalScrollIndicator style={{width:Width,display:'flex',flexDirection:'row',overflow:'scroll'}}>
+        <ScrollView  horizontal={true} showsVerticalScrollIndicator style={{width:"100%",display:'flex',flexDirection:'row',overflow:'scroll'}}>
             {children}
         </ScrollView>
     )
