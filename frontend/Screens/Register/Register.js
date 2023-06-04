@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
-import { Button } from "react-native-paper";
+import { Button,IconButton } from "react-native-paper";
 import { Page, Input, CustomBtn, CustomBtnLight, ScreenBtn } from "../../components";
 import Image from "../../assets/images/Medkit-logo.svg";
 import Google from "../../assets/icons/google.svg";
@@ -18,7 +18,8 @@ export const Register = ({ navigation }) => {
     password: "",
     type: ""
   })
-  const [showPassword, setshowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const[showPassword2,setShowPassword2]= useState(false);
   function getRandomElement(array) {
     const randomIndex = Math.floor(Math.random() * array.length);
     return array[randomIndex];
@@ -174,18 +175,36 @@ export const Register = ({ navigation }) => {
         <Input
           labelName="Password"
           placeholder="Enter your password"
-          secureTextEntry={true}
+          secureTextEntry={showPassword}
           maxLength={10}
           onChange={(text) => setSignUpFlow({ ...signUpFlow, password: text })}
           style={{ paddingTop: 2 }}
+          right={
+            <IconButton
+              iconColor={'black'}
+              onPress={() => setShowPassword(!showPassword)}
+              size={22}
+              style={{ paddingRight: 15, borderRadius: 0, position: "relative" }}
+              icon={showPassword ? "eye-outline" : "eye-off-outline"}
+            />
+        }
         />
         <Input
           labelName="Confirm Password"
           placeholder="Confirm your password"
-          secureTextEntry={true}
+          secureTextEntry={showPassword2}
           maxLength={10}
           onChange={(text) => setSignUpFlow({ ...signUpFlow, confirmpassword: text })}
           style={{ paddingTop: 2 }}
+          right={
+            <IconButton
+              iconColor={'black'}
+              onPress={() => setShowPassword2(!showPassword2)}
+              size={22}
+              style={{ paddingRight: 15, borderRadius: 0, position: "relative" }}
+              icon={showPassword ? "eye-outline" : "eye-off-outline"}
+            />
+        }
         />
 
 

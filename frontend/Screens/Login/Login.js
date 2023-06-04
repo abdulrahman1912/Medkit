@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
-import { Checkbox, Button } from "react-native-paper";
+import { Checkbox, Button ,IconButton} from "react-native-paper";
 import { Page, Input } from "../../components";
 import Image from "../../assets/images/Medkit-logo.svg";
 import Google from "../../assets/icons/google.svg";
@@ -14,7 +14,7 @@ export const Login = ({ navigation }) => {
     type: "",
   });
 
-  const [showPassword] = useState(false);
+  const [showPassword,setShowPassword] = useState(false);
   const [checked, setChecked] = useState(false);
 
   const styles = StyleSheet.create({
@@ -118,11 +118,21 @@ export const Login = ({ navigation }) => {
         <Input
           labelName="Password"
           placeholder="Enter your password"
-          secureTextEntry={true}
+          secureTextEntry={!showPassword}
           style={{ paddingTop: 15 }}
           onChange={(text) =>
             setLoginDetails({ ...loginDetails, password: text })
           }
+          right={
+            <IconButton
+              iconColor={'black'}
+              onPress={() => setShowPassword(!showPassword)}
+              size={22}
+              style={{ paddingRight: 15, borderRadius: 0, position: "relative" }}
+              icon={showPassword ? "eye-outline" : "eye-off-outline"}
+            />
+        }
+    
         />
         <View
           style={{
