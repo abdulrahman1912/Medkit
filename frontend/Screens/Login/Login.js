@@ -6,6 +6,8 @@ import Image from "../../assets/images/Medkit-logo.svg";
 import Google from "../../assets/icons/google.svg";
 import api from "../../api";
 import Toast from "react-native-toast-message";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 export const Login = ({ navigation }) => {
   const [loginDetails, setLoginDetails] = useState({
@@ -16,7 +18,16 @@ export const Login = ({ navigation }) => {
 
   const [showPassword,setShowPassword] = useState(false);
   const [checked, setChecked] = useState(false);
+  const[email,setEmail] = useState()
 
+  const toogleRememberMer = async () => {
+    const mail = await AsyncStorage.getItem('Login');
+    mail != null?setChecked(true):setChecked(false)
+    setEmail(mail)
+   
+  }
+  toogleRememberMer()
+  
   const styles = StyleSheet.create({
     container: {
       backgroundColor: "#fff",
@@ -81,6 +92,16 @@ export const Login = ({ navigation }) => {
     },
   });
   const moveToNextPage = async () => {
+    try {
+      if (checked) {
+        await AsyncStorage.setItem("Login", loginDetails.email);
+      } else {
+        await AsyncStorage.setItem("Login", null);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+
     await api
       .post("/login", loginDetails)
       .then(() => {
@@ -113,6 +134,7 @@ export const Login = ({ navigation }) => {
         <Input
           labelName="Email"
           placeholder="Enter your email"
+          value={email != null ?email:loginDetails.email}
           onChange={(text) => setLoginDetails({ ...loginDetails, email: text })}
         />
         <Input
@@ -120,6 +142,7 @@ export const Login = ({ navigation }) => {
           placeholder="Enter your password"
           secureTextEntry={!showPassword}
           style={{ paddingTop: 15 }}
+          
           onChange={(text) =>
             setLoginDetails({ ...loginDetails, password: text })
           }
@@ -148,6 +171,7 @@ export const Login = ({ navigation }) => {
               onPress={() => {
                 setChecked(!checked);
               }}
+              
               color="#91A0F6"
             />
             <Text>Remember Me</Text>
