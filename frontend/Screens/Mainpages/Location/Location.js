@@ -74,6 +74,7 @@ export const Location = ({ navigation }) => {
         <PageMain style={{display:'flex',justifyContent:'center'}} >
 
             <Image source={require('../../../assets/location.gif')} style={{ width: 200, height: 200,alignSelf:'center',marginTop:200 }} />
+            <Text style={{fontSize:20,fontWeight:'700',marginTop:20}}>Finding Nearby Pharmacies</Text>
 
         </PageMain>
 
