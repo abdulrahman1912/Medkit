@@ -1,12 +1,12 @@
 import React from 'react'
 import Style from './customer.module.css'
-import { SpaceBetween, Table,TableRowWithOptions,tabledata2 } from '../../components'
+import { SpaceBetween, Table,TableRowWithOptions,tabledata2,TableRowActive } from '../../components'
 import reload from '../../assets/refresh.svg'
 
 
 export const Customer = () => {
     const tableRows = tabledata2.map(({Values,Status})=>{
-        return <TableRowWithOptions  key={Values} Values={Values} Status={Status} />
+        return <TableRowActive  key={Values} Values={Values} Status={Status} />
     })
 
     return (
