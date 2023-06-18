@@ -53,7 +53,7 @@ export const Hmedix = ({ navigation }) => {
           <ScreenBtn1 width={"45%"}>Anti-bacteria</ScreenBtn1>
           <ScreenBtn1 width={"50%"}>Anti-depressant</ScreenBtn1>
           <ScreenBtn1 width={"60%"}>Anti-hypertensive</ScreenBtn1>
-          <ScreenBtn1 onPressIn={() => navigation.navigate('HmedixPage')} width={"40%"}>Anti-malaria</ScreenBtn1>
+          <ScreenBtn1 onPress={() => navigation.navigate('HmedixPage')} width={"40%"}>Anti-malaria</ScreenBtn1>
           <ScreenBtn1 width={"40%"}>Syrup</ScreenBtn1>
           <ScreenBtn1 width={"40%"}>Tablets</ScreenBtn1>
           <ScreenBtn1 width={"40%"}>Vitamins</ScreenBtn1>

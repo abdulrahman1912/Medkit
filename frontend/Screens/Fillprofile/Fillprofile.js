@@ -1,7 +1,8 @@
 import { React, useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Image ,Pressable} from "react-native";
 import { Page, Input, ScreenBtn } from "../../components";
 import DropDownPicker from "react-native-dropdown-picker";
+import DateTimePicker from "@react-native-community/datetimepicker"
 import Toast from "react-native-toast-message";
 import {
   ImagePickerAsset,
@@ -12,6 +13,7 @@ import {
 import { signupFlowAtom } from '../../jotai-store';
 import { useAtom } from "jotai";
 import api from '../../api';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 
 
@@ -44,6 +46,8 @@ export const Fillprofile = ({ navigation }) => {
     { label: "Female", value: "Female" },
   ]);
   const [signUpFlow, setSignUpFlow] = useAtom(signupFlowAtom)
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [Dob,setDob] = useState()
   const styles = StyleSheet.create({
     container: {
       backgroundColor: "#fff",
@@ -78,6 +82,12 @@ export const Fillprofile = ({ navigation }) => {
   const femaleHairstyles = ['long06', 'long09', 'long12', 'long18'];
   const avatarUrl = `https://api.dicebear.com/5.x/adventurer/png?seed=${signUpFlow.fullname?.replace(" ", "-") || "F"}&backgroundColor=b6e3f4,c0aede,d1df49&hair=${signUpFlow.gender === 'M' ? getRandomElement(maleHairstyles) : getRandomElement(femaleHairstyles)
     }`
+
+    const handleDob = (value) => {
+      setShowDatePicker(false)
+      setDob(value.toDateString());
+      setSignUpFlow({ ...signUpFlow, dob: value })
+  }
   const MovetoNextPage = async () => {
     await api.post('/profile', signUpFlow).then((res) => {
       console.log(res.data.user)
@@ -127,7 +137,14 @@ export const Fillprofile = ({ navigation }) => {
           startIcon={"calendar-outline"}
           placeholder="Enter your DOB"
           style={{ paddingTop: 2 }}
-          onChange={(text) => setSignUpFlow({ ...signUpFlow, dob: text })}
+         value={Dob}
+          right={
+            <Pressable 
+                onPressIn={() => setShowDatePicker(!showDatePicker)}
+            >
+                <MaterialCommunityIcons name={"calendar-outline"} style={{ marginRight: 8, fontSize: 24 }} />
+            </Pressable>
+        }
         />
 
         <View style={{ marginTop: 12 }}>
@@ -144,7 +161,13 @@ export const Fillprofile = ({ navigation }) => {
             placeholderStyle={{ color: "#00000080" }}
           />
         </View>
-
+        {showDatePicker ? 
+                <DateTimePicker
+                    mode='date'
+                    value={new Date()}
+                    onChange={(_, date) => handleDob(date)}
+                />: null
+        }
         <ScreenBtn onPress={MovetoNextPage} style={{ marginVertical: 30 }}>Continue</ScreenBtn>
       </View>
     </Page>

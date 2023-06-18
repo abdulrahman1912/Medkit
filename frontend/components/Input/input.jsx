@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-   marginVertical:5
+    marginVertical: 5
   },
 
   label: {
@@ -43,18 +43,19 @@ export const Input = ({
   styleIcon,
   onChange,
   value,
-  onFocus = () => {},
   maxLength,
+  right,
   ...props
   
+
 }) => {
-  const [isFocused, setIsFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState(true);
   const [hidePassword, setHidePassword] = useState(password);
   return (
     <View style={[styles.inputView, style]}>
       <Text style={styles.label}>{labelName}</Text>
       <View style={[styles.inputContainer]}>
-      <MaterialCommunityIcons name={startIcon} style={{marginRight:8, fontSize:24}} />
+        
         <TextInput
           secureTextEntry={secure}
           autoCorrect={false}
@@ -62,8 +63,10 @@ export const Input = ({
           onChangeText={onChange}
           maxLength={maxLength}
           value={value}
+          style={{ flex: 1, fontSize: 16, }}
           {...props}
         />
+        {right}
       </View>
     </View>
   );

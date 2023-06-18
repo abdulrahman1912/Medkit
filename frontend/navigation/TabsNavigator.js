@@ -26,7 +26,7 @@ export const TabsNavigator = () => {
   return (
     <Tabs.Navigator
       shifting={true}
-      initialRouteName="Home"
+      initialRouteName="Location"
       activeColor={"#000000B8"}
       inactiveColor={"#FFFFFF"}
       barStyle={{

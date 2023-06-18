@@ -1,11 +1,13 @@
 import { React, useState } from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
-import { Checkbox, Button } from "react-native-paper";
+import { Checkbox, Button ,IconButton} from "react-native-paper";
 import { Page, Input } from "../../components";
 import Image from "../../assets/images/Medkit-logo.svg";
 import Google from "../../assets/icons/google.svg";
 import api from "../../api";
 import Toast from "react-native-toast-message";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 export const Login = ({ navigation }) => {
   const [loginDetails, setLoginDetails] = useState({
@@ -14,9 +16,18 @@ export const Login = ({ navigation }) => {
     type: "",
   });
 
-  const [showPassword] = useState(false);
+  const [showPassword,setShowPassword] = useState(false);
   const [checked, setChecked] = useState(false);
+  const[email,setEmail] = useState()
 
+  const toogleRememberMer = async () => {
+    const mail = await AsyncStorage.getItem('Login');
+    mail != null?setChecked(true):setChecked(false)
+    setEmail(mail)
+   
+  }
+  toogleRememberMer()
+  
   const styles = StyleSheet.create({
     container: {
       backgroundColor: "#fff",
@@ -81,6 +92,16 @@ export const Login = ({ navigation }) => {
     },
   });
   const moveToNextPage = async () => {
+    try {
+      if (checked) {
+        await AsyncStorage.setItem("Login", loginDetails.email);
+      } else {
+        await AsyncStorage.setItem("Login", null);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+
     await api
       .post("/login", loginDetails)
       .then(() => {
@@ -113,16 +134,28 @@ export const Login = ({ navigation }) => {
         <Input
           labelName="Email"
           placeholder="Enter your email"
+          value={email != null ?email:loginDetails.email}
           onChange={(text) => setLoginDetails({ ...loginDetails, email: text })}
         />
         <Input
           labelName="Password"
           placeholder="Enter your password"
-          secureTextEntry={true}
+          secureTextEntry={!showPassword}
           style={{ paddingTop: 15 }}
+          
           onChange={(text) =>
             setLoginDetails({ ...loginDetails, password: text })
           }
+          right={
+            <IconButton
+              iconColor={'black'}
+              onPress={() => setShowPassword(!showPassword)}
+              size={22}
+              style={{ paddingRight: 15, borderRadius: 0, position: "relative" }}
+              icon={showPassword ? "eye-outline" : "eye-off-outline"}
+            />
+        }
+    
         />
         <View
           style={{
@@ -138,6 +171,7 @@ export const Login = ({ navigation }) => {
               onPress={() => {
                 setChecked(!checked);
               }}
+              
               color="#91A0F6"
             />
             <Text>Remember Me</Text>

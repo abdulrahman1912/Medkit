@@ -22,7 +22,6 @@ export const Main = () => {
   const tableHeads = ['Sn','Name','Status','Amount',"Type",'TimeStamp']
   return (
     <div className={Style.main}>
-
       <SpaceBetween
         style={{ fontSize: 30, fontWeight: '800' }}
         text1={'Quick Overview'}
