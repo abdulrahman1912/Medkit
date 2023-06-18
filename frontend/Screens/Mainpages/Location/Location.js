@@ -68,12 +68,12 @@ export const Location = ({ navigation }) => {
 
     setTimeout(()=>{
         navigation.navigate("Pharmacy");
-    },5000)
+    },3000)
 
     return (
         <PageMain style={{display:'flex',justifyContent:'center'}} >
 
-            <Image source={require('../../../assets/location.gif')} style={{ width: 200, height: 200,alignSelf:'center',marginTop:200 }} />
+            <Image source={require('../../../assets/illustrations/compass.gif')} style={{ width: 200, height: 200,alignSelf:'center',marginTop:200 }} />
             <Text style={{fontSize:20,fontWeight:'700',marginTop:20}}>Finding Nearby Pharmacies</Text>
 
         </PageMain>

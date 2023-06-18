@@ -6,5 +6,6 @@ export * from "./Header/header";
 export * from './Searchbar/searchbar'
 export * from "./Slides/slides";
 export * from "./Card/card";
+export * from "./CardCart/cardcart";
 export * from "./Alert/alert";
 export * from "./ProfileNavLink/profilenavlink";

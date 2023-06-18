@@ -10,7 +10,7 @@ import {
 import Comart from "../../../../assets/medicine/comart.svg";
 import Addcart from "../../../../assets/icons/addcart.svg";
 import Illustrate from "../../../../assets/illustrations/addedtocart.svg";
-export const Productmalaria= ({ navigation }) => {
+export const Productdetail= ({ navigation }) => {
   const [alert, setAlert] = useState(false);
   const styles = StyleSheet.create({
     container: {
@@ -80,7 +80,7 @@ export const Productmalaria= ({ navigation }) => {
         </Text>
         <Illustrate width={300} />
         <View style={{marginHorizontal:5}}>
-        <Pressable onPress={() => navigation.navigate('HmedixPage')} style={styles.alertbtn}>
+        <Pressable onPress={() => navigation.navigate('Cart')} style={styles.alertbtn}>
         <Text style={{color:"#FFF", fontSize:18, fontWeight:700}}>Continue</Text>
         </Pressable>
         </View>
