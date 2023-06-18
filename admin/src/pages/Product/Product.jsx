@@ -64,7 +64,7 @@ export const Product = () => {
             <div className={Style.row}>
                 <Card
                     img={antimaleria}
-                    text={'Anti Maleria'}
+                    text={'Anti Malaria'}
                     number={28}
                     color={'#FC657E'}
                     imgSize={50}

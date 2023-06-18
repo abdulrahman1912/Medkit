@@ -42,8 +42,8 @@ export const Register = () => {
           placeholder={'123456'}
         />
         
-        <Button text={'sign Up'} style={{width:300}} />
-        <span style={{color:'#000',width:"50%"}}>Already have an account? <p style={{ color: '#5F77E1',margin:0}} onClick={()=>{navigate('/')}}>Login</p></span>
+        <Button text={'Sign Up'} style={{width:300, marginTop:10}} onClick={()=>{navigate('/dashboard/main')}} />
+        <span style={{color:'#000',width:"50%", marginTop:10}}>Already have an account? <p style={{ color: '#5F77E1',margin:0}} onClick={()=>{navigate('/')}}>Login</p></span>
       </div>
     </div>
   )

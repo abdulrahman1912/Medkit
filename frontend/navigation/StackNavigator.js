@@ -17,6 +17,7 @@ import {
   Productpalaxin,
   Categories,
   Antimalaria,
+  Editprofile,
 } from "../Screens";
 
 import { TabsNavigator } from "./TabsNavigator";
@@ -25,7 +26,7 @@ const Stack = createNativeStackNavigator();
 export const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Tabs">
+      <Stack.Navigator initialRouteName="Editprofile">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
@@ -118,6 +119,11 @@ export const StackNavigator = () => {
           options={{ headerShown: false }}
         />
 
+        <Stack.Screen
+          name="Editprofile"
+          component={Editprofile}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

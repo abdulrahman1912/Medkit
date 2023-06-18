@@ -10,3 +10,4 @@ export * from "./Location/Location";
 export * from "./Favourites/Favourites";
 export * from "./Cart/Cart";
 export * from "./Profile/Profile";
+export * from "./Profile/Editprofile";

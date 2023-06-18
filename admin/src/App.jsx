@@ -17,8 +17,8 @@ function App() {
         <Route path='main' element={<Main/>}/>
         <Route path='customer' element={<Customer/>}/>
         <Route path='product' element={<Product/>}/>
-        <Route path='transaction' element={<h1>transaction</h1>}/>
-        <Route path='prescribtion' element={<h1>prescribtion</h1>}/>
+        <Route path='transaction' element={<h1>Transaction</h1>}/>
+        <Route path='prescribtion' element={<h1>Prescription</h1>}/>
       </Route>
 
     </Routes>

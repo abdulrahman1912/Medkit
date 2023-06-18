@@ -25,7 +25,7 @@ export const Nav = () => {
         <Row img={customer} text="Customer" onClick={()=>{navigate('/dashboard/customer')}}/> 
         <Row img={product} text="Product" onClick={()=>{navigate('/dashboard/product')}}/>  
         <Row img={Transaction} text="Transaction" onClick={()=>{navigate('/dashboard/Transaction')}}/>
-        <Row img={prescribtion} text="Prescribtion" onClick={()=>{navigate('/dashboard/prescribtion')}}/>
+        <Row img={prescribtion} text="Prescription" onClick={()=>{navigate('/dashboard/prescribtion')}}/>
       </div>
       <Row img={signout} text='Sign Out' onClick={()=>{navigate('/')}}/>
     </div>
