@@ -136,11 +136,11 @@ export const DrugCard = ({ drug, price, text1, text2 ,navigation}) => {
                 <Text
                     style={{ fontSize: 10, color: "#5F77E1", fontWeight: "600" }}
                 >
-                    {price}
+                   ${price}
                 </Text>
                 <View style={{ display: "flex", flexDirection: "row", gap: 12 }}>
                     <Heart />
-                    <TouchableOpacity onPress={()=>{ addToCart()}} style={styles.button}>
+                    <TouchableOpacity onPress={addToCart} style={styles.button}>
                         <Text
                             style={{
                                 fontSize: 7,
