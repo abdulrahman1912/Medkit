@@ -18,6 +18,8 @@ import {
   Categories,
   Antimalaria,
   Editprofile,
+  Productdetail,
+  PaymentPage,
 } from "../Screens";
 
 import { TabsNavigator } from "./TabsNavigator";
@@ -26,7 +28,7 @@ const Stack = createNativeStackNavigator();
 export const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Editprofile">
+      <Stack.Navigator initialRouteName="PaymentPage">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
@@ -120,10 +122,23 @@ export const StackNavigator = () => {
         />
 
         <Stack.Screen
+          name="Productdetail"
+          component={Productdetail}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
           name="Editprofile"
           component={Editprofile}
           options={{ headerShown: false }}
         />
+
+        <Stack.Screen
+          name="PaymentPage"
+          component={PaymentPage}
+          options={{ headerShown: false }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

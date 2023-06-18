@@ -38,7 +38,6 @@ export const HmedixPage = ({ navigation }) => {
     },
 
     container: {
-      flex: 1,
       backgroundColor: "#fff",
       padding: 20,
       width: "100%",
@@ -52,6 +51,7 @@ export const HmedixPage = ({ navigation }) => {
       flexDirection: "row",
       width: "100%",
       marginTop: 30,
+      gap:12
     },
 
     product_item: {
@@ -59,7 +59,6 @@ export const HmedixPage = ({ navigation }) => {
       height: 200,
       backgroundColor: "#E2E4EB",
       alignItems: "center",
-      paddingHorizontal: 10,
       paddingTop: 5,
       borderRadius: 10,
     },
@@ -85,9 +84,7 @@ export const HmedixPage = ({ navigation }) => {
       borderRadius: 20,
       alignItems: "center",
     },
-    left:{
-      marginHorizontal:10
-    }
+   
   });
 
   const Drugs = Druglist.map(({id,drug,price,text1,text2})=>{
@@ -112,7 +109,7 @@ export const HmedixPage = ({ navigation }) => {
       </Text>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{ marginTop: 10, marginBottom: 10 }}
+        style={{ marginTop: 10 }}
       >
         <View style={styles.container}>
           <SearchBar />
