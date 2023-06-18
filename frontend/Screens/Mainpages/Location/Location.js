@@ -68,7 +68,7 @@ export const Location = ({ navigation }) => {
 
     setTimeout(()=>{
         navigation.navigate("Pharmacy");
-    },10000)
+    },5000)
 
     return (
         <PageMain style={{display:'flex',justifyContent:'center'}} >
