@@ -8,6 +8,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+import { Checkbox } from "react-native-paper";
 import {
   Smallbtn,
   Page,
@@ -17,7 +18,10 @@ import {
   DrugCard1,
   Druglist1,
 } from "../../../components";
+import Paystack from "../../../assets/images/paystack.svg";
+import Remita from "../../../assets/images/remita.svg";
 export const PaymentPage = ({ navigation }) => {
+  const [checked, setChecked] = useState(false);
   const styles = StyleSheet.create({
     safeArea: {
       display: "flex",
@@ -46,6 +50,22 @@ export const PaymentPage = ({ navigation }) => {
       display: "flex",
       flexDirection: "row",
     },
+
+    payappbox: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "60%",
+      marginTop: 20,
+    },
+
+    payapp: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
   });
 
   const Drugs = Druglist1.map(({ id, drug, price, text1, text2 }) => {
@@ -69,8 +89,39 @@ export const PaymentPage = ({ navigation }) => {
         style={{ marginTop: 10 }}
       >
         <View style={styles.container}>
+          <View>
+            <View>
+              <Text style={{ fontSize: 16 }}>Payment Method</Text>
+              <View style={styles.payappbox}>
+                <View style={styles.payapp}>
+                  <Paystack />
+                  <Checkbox
+                    status={checked ? "checked" : "unchecked"}
+                    onPress={() => {
+                      setChecked(!checked);
+                    }}
+                    color="#91A0F6"
+                  />
+                </View>
 
-            
+                <View style={styles.payapp}>
+                  <Remita />
+                  <Checkbox
+                    status={checked ? "checked" : "unchecked"}
+                    onPress={() => {
+                      setChecked(!checked);
+                    }}
+                    color="#91A0F6"
+                  />
+                </View>
+              </View>
+              <View style={{marginHorizontal:10}}>
+              <Pressable style={styles.button}>
+                <Text style={{fontSize:18,color:"#fff", fontWeight:700}}>Confirm</Text>
+              </Pressable>
+            </View>
+            </View>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
