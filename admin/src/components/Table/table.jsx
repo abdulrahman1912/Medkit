@@ -37,6 +37,26 @@ export const TableRowWithOptions = ({ Values, Status, }) => {
         </tr>
     )
 }
+export const TableRowActive = ({ Values, Status, }) => {
+    const [status, setStatus] = useState(Status)
+    
+    const color =  status === 'failed' ? '#EB3223' : '#38FF38'
+   const tableData = Values.map((index)=>{
+        return <td key={index}>{index}</td>
+   })
+    return (
+        <tr>
+            {tableData}
+            <td className={Style.parent}>
+             
+                    <select name="Status" value={status}  onChange={(e)=>{setStatus(e.target.value)}} className={Style.status} style={{ borderColor: color, color: color }}>
+                        <option value="failed" style={{  color: color }}>Inactive</option>
+                        <option value="success" style={{  color: color }}>Active</option>
+                    </select>
+            </td>
+        </tr>
+    )
+}
 
 
 export const Table = ({ children,th }) => {
