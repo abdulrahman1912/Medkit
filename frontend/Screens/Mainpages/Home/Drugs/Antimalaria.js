@@ -20,6 +20,8 @@ import Comart from "../../../../assets/medicine/comart.svg";
 import Plaquenil from "../../../../assets/medicine/plaquenil.svg";
 import Palaxin from "../../../../assets/medicine/palaxin.svg";
 import Artequick from "../../../../assets/medicine/artequick.svg";
+import { cartatom } from "../../../../jotai-store";
+import { useAtom } from "jotai";
 export const Antimalaria = ({ navigation }) => {
   const styles = StyleSheet.create({
     safeArea: {
@@ -82,7 +84,7 @@ export const Antimalaria = ({ navigation }) => {
       alignItems: "center",
     },
   });
-
+const [cart, Setcard] = useAtom(cartatom)
   return (
     <SafeAreaView style={styles.safeArea}>
       <Header startIcon={<BackButton navigation={navigation} />} title={'Anti-malaria'} />
@@ -121,7 +123,7 @@ export const Antimalaria = ({ navigation }) => {
                 </Text>
                 <View style={{ display: "flex", flexDirection: "row", gap:12 }}>
                   <Heart />
-                  <TouchableOpacity onPress={""} style={styles.button}>
+                  <TouchableOpacity onPress={()=>{Setcard([...cart,{drug:'coartem',price:1200,text1:'coatermdoes this',text2:"and that" }])}} style={styles.button}>
                     <Text
                       style={{
                         fontSize: 7,

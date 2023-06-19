@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   ScrollView,
   TouchableOpacity,
+  Dimensions,
 } from "react-native";
 import {
   Smallbtn,
@@ -16,7 +17,10 @@ import {
   BackButton,
   DrugCard1,
   Druglist1,
+  CustomBtn
 } from "../../../components";
+import { cartatom } from "../../../jotai-store";
+import { useAtom } from "jotai";
 export const PaymentPage = ({ navigation }) => {
   const styles = StyleSheet.create({
     safeArea: {
@@ -33,6 +37,9 @@ export const PaymentPage = ({ navigation }) => {
       padding: 20,
       width: "100%",
       textAlign: "left",
+      display:'flex',
+      
+      
     },
 
     button: {
@@ -47,7 +54,7 @@ export const PaymentPage = ({ navigation }) => {
       flexDirection: "row",
     },
   });
-
+ const [card ] = useAtom(cartatom)
   const Drugs = Druglist1.map(({ id, drug, price, text1, text2 }) => {
     return (
       <DrugCard1
@@ -66,12 +73,18 @@ export const PaymentPage = ({ navigation }) => {
       <Header startIcon={<BackButton />} title={"Cart"} />
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{ marginTop: 10 }}
+        style={{ marginTop: 10, }}
       >
-        <View style={styles.container}>
+        <View style={{...styles.container,height:Dimensions.get('screen').height
+      }} >
 
-            
+            {Drugs}
+            <Text style={{alignSelf:'baseline',color:'#5F77E1',marginVertical:20,marginLeft:80,fontSize:20}}>Medicine feee: 14500</Text>
+            <CustomBtn >
+              Check out
+            </CustomBtn>
         </View>
+        
       </ScrollView>
     </SafeAreaView>
   );
