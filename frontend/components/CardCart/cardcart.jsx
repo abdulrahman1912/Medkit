@@ -154,6 +154,13 @@ export const Druglist1 = [
     text1: 'ibuprofen is a nonsteroidal\nanti-inflammatory drug',
     text2: "commonly used to relieve pain\nand reduce inflammation",
 },
+  {
+    id: 3,
+    drug: "Ibuprofen",
+    price: "₦"+250,
+    text1: 'ibuprofen is a nonsteroidal\nanti-inflammatory drug',
+    text2: "commonly used to relieve pain\nand reduce inflammation",
+},
 
 
 
