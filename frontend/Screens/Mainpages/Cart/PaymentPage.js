@@ -37,9 +37,9 @@ export const PaymentPage = ({ navigation }) => {
       padding: 20,
       width: "100%",
       textAlign: "left",
-      display:'flex',
-      
-      
+      display: 'flex',
+
+
     },
 
     button: {
@@ -70,7 +70,7 @@ export const PaymentPage = ({ navigation }) => {
       alignItems: "center",
     },
   });
- const [card ] = useAtom(cartatom)
+
   const Drugs = Druglist1.map(({ id, drug, price, text1, text2 }) => {
     return (
       <DrugCard1
@@ -92,10 +92,15 @@ export const PaymentPage = ({ navigation }) => {
         style={{ marginTop: 10, }}
       >
         <View style={styles.container}>
+          {Drugs}
 
-            
+          <Text style={{ fontSize: 18, color: '#5F77E1', marginHorizontal: 90, marginVertical: 30 }}>Medicine Fee: ₦1450</Text>
+          <CustomBtn>
+            Check out
+          </CustomBtn>
+
         </View>
-        
+
       </ScrollView>
     </SafeAreaView>
   );
