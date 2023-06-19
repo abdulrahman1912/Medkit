@@ -4,6 +4,7 @@ import { Card } from "react-native-paper"
 import Comart from "../../assets/medicine/comart.svg";
 import Bell from "../../assets/icons/bell.svg";
 import Heart from "../../assets/icons/heart.svg";
+import Heartfull from "../../assets/icons/heartfull.svg";
 import Upload from "../../assets/icons/upload.svg";
 import { cartatom } from '../../jotai-store';
 import { useAtom } from 'jotai';

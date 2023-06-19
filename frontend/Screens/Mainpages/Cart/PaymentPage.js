@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
+import { Checkbox } from "react-native-paper";
 import {
   Smallbtn,
   Page,
@@ -19,9 +20,8 @@ import {
   Druglist1,
   CustomBtn
 } from "../../../components";
-import { cartatom } from "../../../jotai-store";
-import { useAtom } from "jotai";
 export const PaymentPage = ({ navigation }) => {
+  const [checked, setChecked] = useState(false);
   const styles = StyleSheet.create({
     safeArea: {
       display: "flex",
@@ -53,6 +53,22 @@ export const PaymentPage = ({ navigation }) => {
       display: "flex",
       flexDirection: "row",
     },
+
+    payappbox: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "60%",
+      marginTop: 20,
+    },
+
+    payapp: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
   });
  const [card ] = useAtom(cartatom)
   const Drugs = Druglist1.map(({ id, drug, price, text1, text2 }) => {
@@ -75,14 +91,9 @@ export const PaymentPage = ({ navigation }) => {
         showsVerticalScrollIndicator={false}
         style={{ marginTop: 10, }}
       >
-        <View style={{...styles.container,height:Dimensions.get('screen').height
-      }} >
+        <View style={styles.container}>
 
-            {Drugs}
-            <Text style={{alignSelf:'baseline',color:'#5F77E1',marginVertical:20,marginLeft:80,fontSize:20}}>Medicine feee: 14500</Text>
-            <CustomBtn >
-              Check out
-            </CustomBtn>
+            
         </View>
         
       </ScrollView>
