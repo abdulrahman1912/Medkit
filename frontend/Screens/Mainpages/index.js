@@ -11,5 +11,7 @@ export * from "./Location/Location";
 export * from "./Favourites/Favourites";
 export * from "./Cart/Cart";
 export * from "./Cart/PaymentPage";
+export * from "./Cart/Scan";
 export * from "./Profile/Profile";
 export * from "./Profile/Editprofile";
+export * from "./Cart/QRScanner";

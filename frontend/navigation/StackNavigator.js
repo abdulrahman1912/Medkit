@@ -20,6 +20,8 @@ import {
   Editprofile,
   Productdetail,
   PaymentPage,
+  Scan,
+  QRScanner,
 } from "../Screens";
 
 import { TabsNavigator } from "./TabsNavigator";
@@ -28,7 +30,7 @@ const Stack = createNativeStackNavigator();
 export const StackNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="PaymentPage">
+      <Stack.Navigator initialRouteName="Scan">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
@@ -139,6 +141,16 @@ export const StackNavigator = () => {
           options={{ headerShown: false }}
         />
 
+        <Stack.Screen
+          name="Scan"
+          component={Scan}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+          name="QRScanner"
+          component={QRScanner}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

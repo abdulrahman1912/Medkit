@@ -20,6 +20,8 @@ import {
   Druglist1,
   CustomBtn
 } from "../../../components";
+import { useAtom } from 'jotai';
+import { cartatom } from '../../../jotai-store';
 export const PaymentPage = ({ navigation }) => {
   const [checked, setChecked] = useState(false);
   const styles = StyleSheet.create({
